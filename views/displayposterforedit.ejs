@@ -1,0 +1,13 @@
+<html>
+    <center>
+    <form action="/movie/edit_poster" method="post" enctype="multipart/form-data">
+    <h1><%=data.moviename%></h1>
+    <img src="/images/<%=data.poster%>" width="300"><br><br>
+    <input type="hidden" name="movieid" value="<%=data.movieid %>">
+    <input type="hidden" name="oldfilename" value="<%=data.poster %>">
+    <b>Select New Poster u Want to Upload....</b><br><br>
+    <input type="file" name="poster" ><br><br>
+    <input type="submit" value="Upload New Poster">
+    </form>    
+    </center>
+</html>

@@ -1,0 +1,147 @@
+<style>
+    .maincontainer{
+        background: #dfe6e9;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box{
+        background: #ffffff;
+        width: 50%;
+        height: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+        padding-top: 5px;
+        border-radius: 10px;
+    }
+    .headingDiv{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .heading{
+        font-size: 24px;
+        font-weight: bold;
+        font-family: Oswald;
+        padding-left: 10px;
+        letter-spacing: 1px;
+    }
+    .formDiv{
+        margin: 10px;
+    }
+    .gap{
+        margin-bottom: 10px;
+    }
+    .btnstyle{
+        display: flex;
+        justify-content: center;
+    }
+    .messageDiv{
+        display: flex;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: Oswald;
+    }
+</style>
+<html>
+<head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="/javascripts/project.js"></script>
+</head>
+    
+        <div class="maincontainer">
+            <div class="box">
+              <form action="/movie/movie_submit" enctype="multipart/form-data" method="post">
+                <div class="headingDiv">
+                    <div style="display: flex; flex-direction: row;">
+                    <img src="/images/logo.jpg" width="45px">
+                    <div class="heading">Movie Register</div>
+                    </div>
+
+                    <div><a href="/movie/fetch_all_movies" style="text-decoration: none;"><img src="/images/display.png" style="width: 40px;"></a></div>
+                </div>
+                <div class="formDiv">
+                    
+                    <div class="row gap">
+                        <div class="col-md-6">
+                            <select required class="form-select" name="stateid" id="stateid" aria-label="Default select example">
+                                <option selected>-Select State-</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select required class="form-select" name="cityid" id="cityid" aria-label="Default select example">
+                                <option selected>-Select City-</option>
+                            </select>                            
+                        </div>
+                    </div>
+                    
+                    <div class="row gap">
+                        <div class="col-md-6">
+                            <select required class="form-select" name="cinemaid" id="cinemaid" aria-label="Default select example">
+                                <option selected>-Select Cinema-</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select required class="form-select" name="screenid" id="screenid" aria-label="Default select example">
+                                <option selected>-Select Screen-</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row gap">
+                        <div class="col-md-6">
+                            <input required type="text" class="form-control" placeholder="Movie Name" name="moviename" id="moviename">
+                        </div>
+                        <div class="col-md-6">
+                            <select required class="form-select" name="status" id="status" aria-label="Default select example">
+                                <option selected>-Select Status-</option>
+                                <option>Running</option>
+                                <option>Comming Soon</option>
+                                <option>Discontinue</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input required type="text" class="form-control" placeholder="Description" name="description" id="description">
+                        </div>
+                    </div>
+
+                    <div class="row gap">
+                        <div class="col-md-12">
+                            <label for="poster" class="form-label">Upload Movie Poster</label>
+                            <input required class="form-control" type="file" name="poster"  id="poster">
+                        </div>
+                    </div>
+
+                    <div class="row gap">
+                        <div class="col-md-6 btnstyle">
+                            <button style="width: 300px;" type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                        <div class="col-md-6 btnstyle">
+                            <button style="width: 300px;" type="reset" class="btn btn-primary">Reset</button>
+                        </div>
+                    </div>
+
+                    <div class="row gap">
+                        <div class="col-md-12">
+                            <div class="messageDiv"><%=message %></div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+            </div>
+        </div>
+    
+</html>
